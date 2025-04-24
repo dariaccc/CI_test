@@ -25,3 +25,11 @@ jobs:
 
       - name: Build MkDocs site
         run: pixi run build-mkdocs
+
+      - name: Deploy to GitHub Pages (master branch)
+        run: |
+          git config --global user.name "dariaccc"
+          git config --global user.email "daria.carlberg@gmail.com"
+          git add --all
+          git commit -m "Deploy updated docs"
+          git push origin master
