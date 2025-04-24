@@ -3,37 +3,25 @@ name: test
 on: push
 
 jobs:
-  automation_test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.12'
-
-      - name: pixi-setup
+      - name: Set up Pixi
         uses: prefix-dev/setup-pixi@main
         with:
           cache: true
-          environments: schema
 
-      - name: Install project environment
+      - name: Install environment
         run: pixi install
 
-      - name: generate_json
-        run: pixi run generate-schema #run generate schema from model.py > schema.json
+      - name: Generate schema
+        run: pixi run generate-schema
 
-      - name: generate_md #run schema.json > index.md
-        run: pixi run tomarkdown 
+      - name: Generate Markdown
+        run: pixi run tomarkdown
 
-      - name: build_mkdocs
-        run: pixi run build-mkdocs #pixi builds the mkdocs site
-  
-      - name: deploy_github_pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+      - name: Build MkDocs site
+        run: pixi run build-docs
