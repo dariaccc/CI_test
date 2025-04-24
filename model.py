@@ -14,8 +14,8 @@ if __name__ == "__main__":
     # Print example user object
     data = {
         "id": 1,
-        "username": "pixi_user",
         "email": "user@example.com",
+        "username": "pixi_user",
         "tags": ["developer", "tester"]
     }
     user = User(**data)
