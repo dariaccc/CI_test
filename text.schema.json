@@ -1,0 +1,47 @@
+{
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "integer"
+    },
+    "username": {
+      "title": "Username",
+      "type": "string"
+    },
+    "email": {
+      "title": "Email",
+      "type": "string"
+    },
+    "is_active": {
+      "default": true,
+      "title": "Is Active",
+      "type": "boolean"
+    },
+    "tags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Tags",
+      "type": "array"
+    },
+    "age": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Age"
+    }
+  },
+  "required": [
+    "id",
+    "username",
+    "email"
+  ],
+  "title": "User",
+  "type": "object"
+}

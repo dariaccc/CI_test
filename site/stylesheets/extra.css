@@ -1,0 +1,24 @@
+/* Basic color overrides */
+:root {
+    --md-primary-fg-color: #f9681b; /* Deep Orange Primary */
+    --md-accent-color: #ffab40; /* Amber Accent */
+  }
+  
+  .md-nav__title {
+    color: var(--md-primary-fg-color);
+  }
+  
+  .md-nav__link--active {
+    color: var(--md-accent-color);
+  }
+  
+  .md-typeset h1,
+  .md-typeset h2,
+  .md-typeset h3,
+  .md-typeset h4 {
+    color: var(--md-primary-fg-color);
+  }
+  
+  .md-typeset a {
+    color: var(--md-accent-color);
+  }

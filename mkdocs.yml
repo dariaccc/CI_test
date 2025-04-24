@@ -1,0 +1,22 @@
+site_name: My test site
+
+theme:
+  name: material
+  palette:
+    scheme: slate 
+    primary: deep orange
+    accent: deep orange 
+  features:
+    - navigation.top
+    - navigation.tabs
+    - content.code.copy
+    - content.action.edit
+
+nav:
+  - Home: index.md
+
+
+#extra_css:
+#  - stylesheets/extra.css
+
+ #theme is not working at all - only the custom css
