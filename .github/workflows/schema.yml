@@ -6,6 +6,20 @@ jobs:
   automation_test:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install Pixi
+        run: curl -sSf https://pixi.sh/install.sh | bash
+
+      - name: Install project environment
+        run: pixi install
+
       - name: generate_json
         run: pixi run generate-schema #run generate schema from model.py > schema.json
 
