@@ -11,6 +11,9 @@ cmd = "python model.py > text.schema.json"
 [tasks.tomarkdown]
 cmd = "jsonschema2md text.schema.json docs/index.md"
 
+[tasks.build-mkdocs]
+cmd = "mkdocs build"
+
 [dependencies]
 pip = "*"
 nodejs = ">=22.13.0,<22.14"

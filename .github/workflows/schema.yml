@@ -7,19 +7,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: generate_json
-        run: |
-          pixi run generate-schema
-      - name: generate_md
-        run: |
-          pixi run tomarkdown
+        run: pixi run generate-schema #run generate schema from model.py > schema.json
+
+      - name: generate_md #run schema.json > index.md
+        run: pixi run tomarkdown 
+
       - name: build_mkdocs
-        run: pixi run build-docs 
+        run: pixi run build-mkdocs #pixi builds the mkdocs site
   
       - name: deploy_github_pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
-    #run generate schema from model.py > schema.json: pixi run generate-schema
-    #run schema.json > index.md: pixi run tomarkdown
-    #run extend mkdocs reference based on index.md
