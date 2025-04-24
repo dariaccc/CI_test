@@ -4,8 +4,9 @@ import json
 
 class User(BaseModel):
     id: int
-    email: str
     username: str
+    email: str
+    address: str
     is_active: bool = True
     tags: List[str] = Field(default_factory=list)
     age: Optional[int] = None
@@ -14,8 +15,9 @@ if __name__ == "__main__":
     # Print example user object
     data = {
         "id": 1,
-        "email": "user@example.com",
         "username": "pixi_user",
+        "address": "Teststreet 4",
+        "email": "user@example.com",
         "tags": ["developer", "tester"]
     }
     user = User(**data)
