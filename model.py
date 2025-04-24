@@ -4,8 +4,8 @@ import json
 
 class User(BaseModel):
     id: int
-    username: str
     email: str
+    username: str
     is_active: bool = True
     tags: List[str] = Field(default_factory=list)
     age: Optional[int] = None
