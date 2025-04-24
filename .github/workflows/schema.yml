@@ -14,8 +14,11 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install Pixi
-        run: curl -sSf https://pixi.sh/install.sh | bash
+      - name: pixi-setup
+        uses: prefix-dev/setup-pixi@main
+        with:
+          cache: true
+          environments: schema
 
       - name: Install project environment
         run: pixi install
