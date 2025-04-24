@@ -12,8 +12,14 @@ jobs:
       - name: generate_md
         run: |
           pixi run tomarkdown
-      - name: extend_reference
-        run: 
+      - name: build_mkdocs
+        run: pixi run build-docs 
+  
+      - name: deploy_github_pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
     #run generate schema from model.py > schema.json: pixi run generate-schema
     #run schema.json > index.md: pixi run tomarkdown
     #run extend mkdocs reference based on index.md
