@@ -16,6 +16,10 @@
       "title": "Address",
       "type": "string"
     },
+    "test": {
+      "title": "Test",
+      "type": "string"
+    },
     "is_active": {
       "default": true,
       "title": "Is Active",
@@ -45,7 +49,8 @@
     "id",
     "username",
     "email",
-    "address"
+    "address",
+    "test"
   ],
   "title": "User",
   "type": "object"

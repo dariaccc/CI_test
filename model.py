@@ -7,6 +7,7 @@ class User(BaseModel):
     username: str
     email: str
     address: str
+    test: str
     is_active: bool = True
     tags: List[str] = Field(default_factory=list)
     age: Optional[int] = None
@@ -17,6 +18,7 @@ if __name__ == "__main__":
         "id": 1,
         "username": "pixi_user",
         "address": "Teststreet 4",
+        "test": "Another little test",
         "email": "user@example.com",
         "tags": ["developer", "tester"]
     }
